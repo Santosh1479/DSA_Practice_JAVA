@@ -38,15 +38,13 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int s[] = { 6, 3, 9, 5, 2, 8 };
+        int s[] = { 6, 7, 2, 1, 0, 9, 4, 8 };
         int l = s.length;
         divide(s, 0, l - 1);
         // to print
         for (int i = 0; i < l; i++) {
-            System.out.println(s[i] + " ");
+            System.out.print(s[i] + " ");
         }
-        System.out.println();
-
     }
 
 }

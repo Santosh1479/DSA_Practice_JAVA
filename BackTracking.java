@@ -19,20 +19,17 @@ public class BackTracking {
     public static void recur(char[][] board, List<List<String>> boards, int col) {
         if (col == board.length) {
             save(board, boards);
-            return;
+            return ;
         }
 
         for (int row = 0; row <= board.length; row++) {
-            if(row==board.length){
-                System.out.println(boards);
-                return;
-            }
             if (isSafe(row, col, board)) {
                 board[row][col] = 'q';
                 recur(board, boards, col + 1);
                 board[row][col] = '.';
             }
         }
+        // return boards;
     }
 
     public static boolean isSafe(int row, int col, char[][] board) {
@@ -102,15 +99,17 @@ public class BackTracking {
     }
 
     // public static List<List<String>> main(int n) {
-    public static void main(String[] args) {
+    public static List<List<String>> calle(String[] args) {
         List<List<String>> boards = new ArrayList<>();
         char[][] board = new char[4][4];
         recur(board, boards, 0);
+        return boards;
     }
 
-    // public static void main(String[] args) {
+    public static void main(String[] args) {
     // String s="abc";
     // printperm(s, 0, " ");
-    // }
+    calle(args);
+    }
 
 }
