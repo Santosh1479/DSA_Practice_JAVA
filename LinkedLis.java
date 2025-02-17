@@ -88,6 +88,25 @@ class LinkedLis {
       secondlast.next = null;
    }
 
+
+   public void RevLoop(){
+      if(head == null || head.next == null){
+         return;
+      }
+      Node prev = head;
+      Node current = head.next;
+      while(current != null){
+         Node next = current.next;
+         current.next = prev;
+         prev = current;
+         current = next;
+      }
+      head.next = null;
+      head = prev;
+   }
+
+
+
    public Node ReverseRecursive(Node head) {
       if (head == null || head.next == null) {
          return head;
@@ -96,6 +115,7 @@ class LinkedLis {
       head.next.next = head;
       head.next = null;
       return newHead;
+      
    }
 
    public static void main(String[] args) {
@@ -108,9 +128,17 @@ class LinkedLis {
       // list.addFirst("this");
       // list.PrintList();
 
-      LinkedList<String> list1 = new LinkedList<String>();
-      list1.add("Hi");
-      list1.add("Hello");
+      list.addFirst("Hi");
+      list.addFirst("Hello");
+      list.addFirst("Hello");
+      list.addFirst("Hello");
+      list.addFirst("Hello");
+      list.addFirst("Hello");
+      list.addFirst("Hello");
+      list.PrintList();
+      // list.RevLoop();
+      list.ReverseRecursive(list.head);
+      list.PrintList();
       
 
    }
