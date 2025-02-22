@@ -40,6 +40,7 @@ public class linkedLSTadv {
 
     }
 
+
     public static void main(String[] args) {
         LinkedList<String> S = new LinkedList<>();
         S.add("me");
